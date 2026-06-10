@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0id29vZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjQTA3MTRBIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjOEI1RTNDIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzZCNDQyMyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9InVybCgjd29vZCkiLz4KICA8cmVjdCB4PSIyNzAiIHk9IjIyMCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjE4MCIgcng9IjE0IiBmaWxsPSIjQzQ5MDVBIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSAyODYgMzEwKSIvPgogIDxyZWN0IHg9IjE1NSIgeT0iMTIwIiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjgwIiByeD0iMTgiIGZpbGw9IiNGMEU2RDgiLz4KICA8cmVjdCB4PSIxNTUiIHk9IjEyMCIgd2lkdGg9IjY1IiBoZWlnaHQ9IjgwIiByeD0iMTgiIGZpbGw9IiNFMEQwQkMiLz4KICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIzNjAiIHI9IjkwIiBmaWxsPSIjMkQ5RTVGIi8+CiAgPHBvbHlsaW5lIHBvaW50cz0iMzE4LDM2MCAzNDUsMzkwIDQwMiwzMjUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0id29vZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjQTA3MTRBIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjOEI1RTNDIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzZCNDQyMyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9InVybCgjd29vZCkiLz4KICA8cmVjdCB4PSIyNzAiIHk9IjIyMCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjE4MCIgcng9IjE0IiBmaWxsPSIjQzQ5MDVBIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSAyODYgMzEwKSIvPgogIDxyZWN0IHg9IjE1NSIgeT0iMTIwIiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjgwIiByeD0iMTgiIGZpbGw9IiNGMEU2RDgiLz4KICA8cmVjdCB4PSIxNTUiIHk9IjEyMCIgd2lkdGg9IjY1IiBoZWlnaHQ9IjgwIiByeD0iMTgiIGZpbGw9IiNFMEQwQkMiLz4KICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIzNjAiIHI9IjkwIiBmaWxsPSIjMkQ5RTVGIi8+CiAgPHBvbHlsaW5lIHBvaW50cz0iMzE4LDM2MCAzNDUsMzkwIDQwMiwzMjUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=">
+  <meta name="theme-color" content="#8B5E3C">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Carpenter">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carpenter Attendance Register</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #F7F5F0; --card: #FFFFFF; --wood: #8B5E3C; --wood-light: #C4905A;
+    --wood-pale: #F0E6D8; --present: #2D9E5F; --present-bg: #E8F7EF;
+    --absent: #D94F3D; --absent-bg: #FDECEA; --neutral: #E0D9D0;
+    --text: #1C1A18; --muted: #7A6F65; --border: #E5DDD4;
+  }
+  [data-theme="dark"] {
+    --bg: #141210; --card: #1E1B17; --wood: #A0714A; --wood-light: #C4905A;
+    --wood-pale: #2A221A; --present: #3DBD74; --present-bg: #0F2B1C;
+    --absent: #E8574A; --absent-bg: #2B110F; --neutral: #2E2923;
+    --text: #EDE8E3; --muted: #8A8077; --border: #2E2923;
+  }
+  .theme-toggle { position: fixed; top: 16px; right: 16px; z-index: 99; background: var(--card); border: 1px solid var(--border); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: background 0.2s, border 0.2s; }
+  .theme-toggle:active { transform: scale(0.92); }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); min-height: 100vh; padding: 24px 16px; color: var(--text); }
+  .header { text-align: center; margin-bottom: 28px; }
+  .header-badge { display: inline-block; background: var(--wood); color: white; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 2px; margin-bottom: 10px; }
+  .header h1 { font-size: 26px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+  .header p { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .summary-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .summary-card { background: var(--card); border-radius: 10px; padding: 14px 16px; border: 1px solid var(--border); text-align: center; }
+  .summary-card .role { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 6px; }
+  .summary-card .count { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600; color: var(--present); }
+  .summary-card .count span { font-size: 13px; color: var(--muted); font-family: 'Inter', sans-serif; font-weight: 400; }
+  .table-wrapper { max-width: 720px; margin: 0 auto; background: var(--card); border-radius: 14px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .table-header { display: grid; grid-template-columns: 90px repeat(3, 1fr); background: var(--wood); color: white; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
+  .table-header div { padding: 14px 12px; text-align: center; }
+  .table-header .date-col { text-align: left; padding-left: 16px; }
+  .row { display: grid; grid-template-columns: 90px repeat(3, 1fr); border-top: 1px solid var(--border); transition: background 0.15s; }
+  .row:hover { background: var(--wood-pale); }
+  .row.weekend { background: var(--wood-pale); opacity: 0.85; }
+  .row.weekend .date-cell { color: var(--wood-light); }
+  .date-cell { padding: 13px 16px; font-size: 13px; font-weight: 500; display: flex; flex-direction: column; justify-content: center; }
+  .date-cell .day-name { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 2px; }
+  .date-cell .day-num { font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600; }
+  .att-cell { display: flex; align-items: center; justify-content: center; padding: 10px; }
+  .att-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--neutral); background: var(--neutral); cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: all 0.15s ease; user-select: none; -webkit-tap-highlight-color: transparent; }
+  .att-btn:hover { transform: scale(1.08); }
+  .att-btn.present { background: var(--present-bg); border-color: var(--present); }
+  .att-btn.absent { background: var(--absent-bg); border-color: var(--absent); }
+  .worker-label { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .worker-label .emoji { font-size: 16px; }
+  .worker-label .name { font-size: 11px; font-weight: 600; }
+  .worker-label .role-tag { font-size: 9px; opacity: 0.75; }
+  .wages-section { max-width: 720px; margin: 16px auto 0; background: var(--card); border-radius: 14px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .wages-header { background: var(--wood-pale); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .wages-header h3 { font-size: 14px; font-weight: 700; color: var(--wood); }
+  .wages-body { padding: 16px 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .wage-row { background: #FAFAF7; border-radius: 8px; padding: 14px; border: 1px solid var(--border); text-align: center; }
+  .wage-row .w-role { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 8px; }
+  .wage-row .w-days { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 600; color: var(--present); }
+  .wage-row .w-days-label { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+  .wage-row .w-input-wrap { display: flex; align-items: center; gap: 4px; justify-content: center; margin-bottom: 8px; }
+  .wage-row .w-input-wrap span { font-size: 13px; font-weight: 600; color: var(--wood); }
+  .wage-input { width: 72px; border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--text); text-align: center; background: white; outline: none; }
+  .wage-input:focus { border-color: var(--wood-light); }
+  .wage-row .w-total { font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: var(--text); border-top: 1px solid var(--border); padding-top: 8px; margin-top: 4px; }
+  .wage-row .w-total-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; }
+  .grand-total { margin: 0 20px 16px; background: var(--wood); border-radius: 10px; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; color: white; }
+  .grand-total .gt-label { font-size: 13px; font-weight: 600; opacity: 0.85; }
+  .grand-total .gt-amount { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; }
+  /* ── Payment Tracker ── */
+  .payment-section { max-width: 720px; margin: 16px auto 0; background: var(--card); border-radius: 14px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .payment-header { background: var(--wood-pale); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .payment-header h3 { font-size: 14px; font-weight: 700; color: var(--wood-light); }
+  .payment-add { padding: 16px 20px; display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; border-bottom: 1px solid var(--border); }
+  .payment-add label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); display: block; margin-bottom: 4px; }
+  .payment-add input { border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text); background: var(--card); outline: none; }
+  .payment-add input:focus { border-color: var(--wood-light); }
+  .p-date-input { width: 150px; }
+  .p-amount-input { width: 130px; font-family: 'JetBrains Mono', monospace !important; }
+  .p-note-input { flex: 1; min-width: 120px; }
+  .add-payment-btn { background: var(--wood); color: white; border: none; border-radius: 8px; padding: 9px 20px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; white-space: nowrap; }
+  .add-payment-btn:active { opacity: 0.85; }
+  .payment-list { padding: 0 20px 4px; }
+  .payment-list:empty::after { content: 'No payments recorded yet.'; display: block; padding: 16px 0; font-size: 13px; color: var(--muted); text-align: center; }
+  .payment-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .payment-item:last-child { border-bottom: none; }
+  .p-date-badge { background: var(--wood-pale); color: var(--wood-light); font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+  .p-note-text { flex: 1; font-size: 13px; color: var(--muted); }
+  .p-amount-text { font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 700; color: var(--wood-light); }
+  .p-del-btn { background: none; border: none; color: var(--absent); cursor: pointer; font-size: 16px; padding: 2px 6px; border-radius: 4px; }
+  .p-del-btn:hover { background: var(--absent-bg); }
+  .balance-bar { margin: 0 20px 16px; border-radius: 10px; padding: 14px 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .bal-item { text-align: center; }
+  .bal-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 4px; }
+  .bal-value { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; }
+  .bal-due { color: var(--text); }
+  .bal-paid { color: var(--wood-light); }
+  .bal-net-positive { color: var(--absent); }
+  .bal-net-zero { color: var(--present); }
+  .balance-divider { border-top: 1px solid var(--border); margin: 0 20px; }
+  .export-wrap { max-width: 720px; margin: 14px auto 0; text-align: center; }
+  .export-btn { background: var(--wood); color: white; border: none; border-radius: 10px; padding: 14px 36px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: 0.3px; box-shadow: 0 2px 8px rgba(139,94,60,0.3); }
+  .export-btn:active { opacity: 0.85; }
+  .footer-note { text-align: center; font-size: 11px; color: var(--muted); padding: 16px; margin-top: 4px; }
+  @media (max-width: 480px) {
+    .att-btn { width: 38px; height: 38px; font-size: 18px; }
+    .table-header div { padding: 12px 6px; font-size: 10px; }
+    .date-cell { padding: 10px 10px; }
+    .wages-body { grid-template-columns: 1fr; }
+    .summary-bar { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle dark mode">🌙</button>
+<div class="header">
+  <div class="header-badge">Home Interior Project</div>
+  <h1>Carpenter Attendance</h1>
+  <p>Jun 3, 2026 – ongoing &middot; Daily Wages</p>
+</div>
+
+<div class="summary-bar">
+  <div class="summary-card">
+    <div class="role">🪚 Head Carpenter</div>
+    <div class="count" id="sum-head">0 <span>days</span></div>
+  </div>
+  <div class="summary-card">
+    <div class="role">🔨 Jr. Carpenter</div>
+    <div class="count" id="sum-junior">0 <span>days</span></div>
+  </div>
+  <div class="summary-card">
+    <div class="role">🧰 Helper</div>
+    <div class="count" id="sum-helper">0 <span>days</span></div>
+  </div>
+</div>
+
+<div class="table-wrapper">
+  <div class="table-header">
+    <div class="date-col">Date</div>
+    <div><div class="worker-label"><span class="emoji">🪚</span><span class="name">HEAD</span><span class="role-tag">Carpenter</span></div></div>
+    <div><div class="worker-label"><span class="emoji">🔨</span><span class="name">JUNIOR</span><span class="role-tag">Carpenter</span></div></div>
+    <div><div class="worker-label"><span class="emoji">🧰</span><span class="name">HELPER</span><span class="role-tag"></span></div></div>
+  </div>
+  <div id="att-rows"></div>
+</div>
+
+<div class="wages-section">
+  <div class="wages-header">
+    <h3>💰 Wage Calculator</h3>
+    <span style="font-size:12px;color:var(--muted)">Daily rate (₹) per person</span>
+  </div>
+  <div class="wages-body">
+    <div class="wage-row">
+      <div class="w-role">Head Carpenter</div>
+      <div class="w-days" id="wdays-head">0</div>
+      <div class="w-days-label">days present</div>
+      <div class="w-input-wrap"><span>₹</span><input class="wage-input" id="rate-head" type="number" value="800" min="0"><span style="font-size:11px;color:var(--muted)">/day</span></div>
+      <div class="w-total-label">Total Due</div>
+      <div class="w-total" id="total-head">₹0</div>
+    </div>
+    <div class="wage-row">
+      <div class="w-role">Jr. Carpenter</div>
+      <div class="w-days" id="wdays-junior">0</div>
+      <div class="w-days-label">days present</div>
+      <div class="w-input-wrap"><span>₹</span><input class="wage-input" id="rate-junior" type="number" value="600" min="0"><span style="font-size:11px;color:var(--muted)">/day</span></div>
+      <div class="w-total-label">Total Due</div>
+      <div class="w-total" id="total-junior">₹0</div>
+    </div>
+    <div class="wage-row">
+      <div class="w-role">Helper</div>
+      <div class="w-days" id="wdays-helper">0</div>
+      <div class="w-days-label">days present</div>
+      <div class="w-input-wrap"><span>₹</span><input class="wage-input" id="rate-helper" type="number" value="450" min="0"><span style="font-size:11px;color:var(--muted)">/day</span></div>
+      <div class="w-total-label">Total Due</div>
+      <div class="w-total" id="total-helper">₹0</div>
+    </div>
+  </div>
+  <div class="grand-total">
+    <span class="gt-label">Grand Total Payable</span>
+    <span class="gt-amount" id="grand-total">₹0</span>
+  </div>
+</div>
+
+<!-- ── Payment Tracker ── -->
+<div class="payment-section">
+  <div class="payment-header">
+    <h3>💸 Payment Tracker</h3>
+    <span style="font-size:12px;color:#2563EB;">Payment Records</span>
+  </div>
+  <div class="payment-add">
+    <div>
+      <label>Date</label>
+      <input class="p-date-input" type="date" id="p-date">
+    </div>
+    <div>
+      <label>Amount (₹)</label>
+      <input class="p-amount-input" type="number" id="p-amount" placeholder="0" min="0">
+    </div>
+    <div style="flex:1;min-width:120px;">
+      <label>Note (optional)</label>
+      <input class="p-note-input" type="text" id="p-note" placeholder="e.g. Advance, Week 1...">
+    </div>
+    <button class="add-payment-btn" onclick="addPayment()">+ Add</button>
+  </div>
+  <div class="payment-list" id="payment-list"></div>
+  <div class="balance-divider"></div>
+  <div class="balance-bar">
+    <div class="bal-item">
+      <div class="bal-label">Total Due</div>
+      <div class="bal-value bal-due" id="bal-due">₹0</div>
+    </div>
+    <div class="bal-item">
+      <div class="bal-label">Total Paid</div>
+      <div class="bal-value bal-paid" id="bal-paid">₹0</div>
+    </div>
+    <div class="bal-item">
+      <div class="bal-label">Net Balance</div>
+      <div class="bal-value" id="bal-net">₹0</div>
+    </div>
+  </div>
+</div>
+
+<div class="export-wrap" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+  <button class="export-btn" id="save-btn" onclick="manualSave()" style="background:#2D9E5F;box-shadow:0 2px 8px rgba(45,158,95,0.3);">💾 Save</button>
+  <button class="export-btn" onclick="exportPDF()">📄 Export PDF</button>
+</div>
+<div id="save-toast" style="text-align:center;margin-top:10px;font-size:13px;font-weight:600;color:#2D9E5F;opacity:0;transition:opacity 0.3s;">✅ Saved!</div>
+
+<div class="footer-note">Tap ✅/❌ to toggle &middot; Data saved in browser &middot; <span id="today-label"></span></div>
+
+<script>
+  // ── Theme ────────────────────────────────────────────────────────────────────
+  function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+    document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
+    try { localStorage.setItem('carpenter_theme', isDark ? 'light' : 'dark'); } catch(e) {}
+  }
+  (function() {
+    try {
+      const t = localStorage.getItem('carpenter_theme');
+      if (t === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); document.addEventListener('DOMContentLoaded', () => { document.getElementById('theme-btn').textContent = '☀️'; }); }
+    } catch(e) {}
+  })();
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  const START_DATE = new Date(2026, 5, 3);
+  const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const WORKERS = ['head', 'junior', 'helper'];
+  const WORKER_LABELS = { head: 'Head Carpenter', junior: 'Jr. Carpenter', helper: 'Helper' };
+
+  let attendance = {};
+
+  function getStorageKey() { return 'carpenter_att_v2'; }
+  function getRatesKey()   { return 'carpenter_rates_v2'; }
+
+  function loadData() {
+    try { const r = localStorage.getItem(getStorageKey()); if (r) attendance = JSON.parse(r); } catch(e) { attendance = {}; }
+  }
+  function saveData() {
+    try { localStorage.setItem(getStorageKey(), JSON.stringify(attendance)); } catch(e) { alert('Save failed! Allow storage in browser settings.'); }
+  }
+  function loadRates() {
+    try {
+      const r = localStorage.getItem(getRatesKey());
+      if (r) { const rates = JSON.parse(r); WORKERS.forEach(w => { if (rates[w]) document.getElementById('rate-'+w).value = rates[w]; }); }
+    } catch(e) {}
+  }
+  function saveRates() {
+    try {
+      const obj = {}; WORKERS.forEach(w => { obj[w] = document.getElementById('rate-'+w).value; });
+      localStorage.setItem(getRatesKey(), JSON.stringify(obj));
+    } catch(e) {}
+  }
+
+  function formatKey(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth()+1).padStart(2,'0');
+    const d = String(date.getDate()).padStart(2,'0');
+    return y+'-'+m+'-'+d;
+  }
+  function getToday() { const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+
+  function buildRows() {
+    const container = document.getElementById('att-rows');
+    container.innerHTML = '';
+    const today = getToday();
+    const endDate = new Date(Math.max(today.getTime() + 3*86400000, START_DATE.getTime() + 29*86400000));
+    let d = new Date(START_DATE);
+    while (d <= endDate) {
+      const key = formatKey(d);
+      const dayIdx = d.getDay();
+      const isSunday = dayIdx === 0;
+      const isToday = formatKey(d) === formatKey(today);
+      const row = document.createElement('div');
+      row.className = 'row' + (isSunday ? ' weekend' : '');
+      if (isToday) row.style.background = '#FFFBF5';
+      const dateCell = document.createElement('div');
+      dateCell.className = 'date-cell';
+      dateCell.innerHTML = '<span class="day-name">'+DAYS[dayIdx]+(isSunday?' 🏖':'')+'</span><span class="day-num">'+d.getDate()+' '+MONTHS[d.getMonth()]+'</span>';
+      if (isToday) dateCell.style.color = '#8B5E3C';
+      row.appendChild(dateCell);
+      WORKERS.forEach(w => {
+        const cell = document.createElement('div');
+        cell.className = 'att-cell';
+        const state = attendance[key] && attendance[key][w] !== undefined ? attendance[key][w] : null;
+        const btn = document.createElement('button');
+        btn.className = 'att-btn' + (state === true ? ' present' : state === false ? ' absent' : '');
+        btn.innerHTML = state === true ? '✅' : state === false ? '❌' : '·';
+        btn.addEventListener('click', () => {
+          if (!attendance[key]) attendance[key] = {};
+          const cur = attendance[key][w] !== undefined ? attendance[key][w] : null;
+          if (cur === null)       { attendance[key][w] = true;  btn.className='att-btn present'; btn.innerHTML='✅'; }
+          else if (cur === true)  { attendance[key][w] = false; btn.className='att-btn absent';  btn.innerHTML='❌'; }
+          else                    { delete attendance[key][w];  btn.className='att-btn';          btn.innerHTML='·'; }
+          // Clean empty date keys
+          if (Object.keys(attendance[key]).length === 0) delete attendance[key];
+          saveData();
+          updateSummary();
+        });
+        cell.appendChild(btn);
+        row.appendChild(cell);
+      });
+      container.appendChild(row);
+      d = new Date(d.getTime() + 86400000);
+    }
+  }
+
+  function updateSummary() {
+    const counts = { head:0, junior:0, helper:0 };
+    Object.values(attendance).forEach(day => { WORKERS.forEach(w => { if (day[w] === true) counts[w]++; }); });
+    WORKERS.forEach(w => {
+      document.getElementById('sum-'+w).innerHTML = counts[w]+' <span>days</span>';
+      document.getElementById('wdays-'+w).textContent = counts[w];
+    });
+    updateWages(counts);
+  }
+
+  function updateWages(counts) {
+    if (!counts) {
+      counts = { head:0, junior:0, helper:0 };
+      Object.values(attendance).forEach(day => { WORKERS.forEach(w => { if (day[w] === true) counts[w]++; }); });
+    }
+    let grand = 0;
+    WORKERS.forEach(w => {
+      const rate = parseFloat(document.getElementById('rate-'+w).value) || 0;
+      const total = counts[w] * rate;
+      grand += total;
+      document.getElementById('total-'+w).textContent = '₹'+total.toLocaleString('en-IN');
+    });
+    document.getElementById('grand-total').textContent = '₹'+grand.toLocaleString('en-IN');
+  }
+
+  function manualSave() {
+    saveData();
+    saveRates();
+    const btn = document.getElementById('save-btn');
+    const toast = document.getElementById('save-toast');
+    btn.innerHTML = '✅ Saved!';
+    btn.style.opacity = '0.8';
+    toast.style.opacity = '1';
+    setTimeout(() => {
+      btn.innerHTML = '💾 Save';
+      btn.style.opacity = '1';
+      toast.style.opacity = '0';
+    }, 2000);
+  }
+
+  // ── PDF Export ──────────────────────────────────────────────────────────────
+  function exportPDF() {
+    // Collect only dates that have at least one marked entry
+    const markedDates = Object.keys(attendance).filter(key => {
+      const day = attendance[key];
+      return WORKERS.some(w => day[w] === true || day[w] === false);
+    }).sort();
+
+    if (markedDates.length === 0) {
+      alert('No attendance marked yet. Please mark some days first.');
+      return;
+    }
+
+    const rates = {};
+    const counts = { head:0, junior:0, helper:0 };
+    WORKERS.forEach(w => { rates[w] = parseFloat(document.getElementById('rate-'+w).value) || 0; });
+    Object.values(attendance).forEach(day => { WORKERS.forEach(w => { if (day[w] === true) counts[w]++; }); });
+
+    const rows = markedDates.map(key => {
+      const [y, m, d] = key.split('-').map(Number);
+      const date = new Date(y, m-1, d);
+      const dayName = DAYS[date.getDay()];
+      const dateStr = d+' '+MONTHS[m-1]+' '+y;
+      const day = attendance[key] || {};
+      const cells = WORKERS.map(w => {
+        const v = day[w];
+        if (v === true)  return '<td style="text-align:center;color:#2D9E5F;font-weight:700;font-size:16px;">P</td>';
+        if (v === false) return '<td style="text-align:center;color:#D94F3D;font-weight:700;font-size:16px;">A</td>';
+        return '<td style="text-align:center;color:#aaa;">—</td>';
+      }).join('');
+      return '<tr><td style="padding:7px 10px;font-weight:500;">'+dayName+'</td><td style="padding:7px 10px;">'+dateStr+'</td>'+cells+'</tr>';
+    }).join('');
+
+    const summaryRows = WORKERS.map(w => {
+      const total = counts[w] * rates[w];
+      return '<tr><td style="padding:6px 12px;">'+WORKER_LABELS[w]+'</td><td style="text-align:center;padding:6px 12px;">'+counts[w]+'</td><td style="text-align:right;padding:6px 12px;">₹'+rates[w].toLocaleString('en-IN')+'</td><td style="text-align:right;padding:6px 12px;font-weight:600;">₹'+total.toLocaleString('en-IN')+'</td></tr>';
+    }).join('');
+
+    const grandTotal = WORKERS.reduce((sum, w) => sum + counts[w]*rates[w], 0);
+    const today = new Date();
+    const generatedOn = today.getDate()+' '+MONTHS[today.getMonth()]+' '+today.getFullYear();
+
+    const html = `<!DOCTYPE html><html><head><meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0id29vZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjQTA3MTRBIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjOEI1RTNDIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzZCNDQyMyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9InVybCgjd29vZCkiLz4KICA8cmVjdCB4PSIyNzAiIHk9IjIyMCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjE4MCIgcng9IjE0IiBmaWxsPSIjQzQ5MDVBIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSAyODYgMzEwKSIvPgogIDxyZWN0IHg9IjE1NSIgeT0iMTIwIiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjgwIiByeD0iMTgiIGZpbGw9IiNGMEU2RDgiLz4KICA8cmVjdCB4PSIxNTUiIHk9IjEyMCIgd2lkdGg9IjY1IiBoZWlnaHQ9IjgwIiByeD0iMTgiIGZpbGw9IiNFMEQwQkMiLz4KICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIzNjAiIHI9IjkwIiBmaWxsPSIjMkQ5RTVGIi8+CiAgPHBvbHlsaW5lIHBvaW50cz0iMzE4LDM2MCAzNDUsMzkwIDQwMiwzMjUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0id29vZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjQTA3MTRBIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjOEI1RTNDIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzZCNDQyMyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9InVybCgjd29vZCkiLz4KICA8cmVjdCB4PSIyNzAiIHk9IjIyMCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjE4MCIgcng9IjE0IiBmaWxsPSIjQzQ5MDVBIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSAyODYgMzEwKSIvPgogIDxyZWN0IHg9IjE1NSIgeT0iMTIwIiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjgwIiByeD0iMTgiIGZpbGw9IiNGMEU2RDgiLz4KICA8cmVjdCB4PSIxNTUiIHk9IjEyMCIgd2lkdGg9IjY1IiBoZWlnaHQ9IjgwIiByeD0iMTgiIGZpbGw9IiNFMEQwQkMiLz4KICA8Y2lyY2xlIGN4PSIzNjAiIGN5PSIzNjAiIHI9IjkwIiBmaWxsPSIjMkQ5RTVGIi8+CiAgPHBvbHlsaW5lIHBvaW50cz0iMzE4LDM2MCAzNDUsMzkwIDQwMiwzMjUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=">
+  <meta name="theme-color" content="#8B5E3C">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Carpenter">
+    <title>Attendance Report</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 32px; color: #1C1A18; font-size: 13px; }
+      h1 { font-size: 20px; color: #8B5E3C; margin-bottom: 4px; }
+      .sub { color: #7A6F65; font-size: 12px; margin-bottom: 24px; }
+      table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+      th { background: #8B5E3C; color: white; padding: 8px 10px; text-align: center; font-size: 12px; }
+      th.left { text-align: left; }
+      tr:nth-child(even) { background: #F7F5F0; }
+      td { border-bottom: 1px solid #E5DDD4; font-size: 13px; }
+      .section-title { font-size: 14px; font-weight: 700; color: #8B5E3C; margin-bottom: 8px; border-bottom: 2px solid #8B5E3C; padding-bottom: 4px; }
+      .grand { background: #8B5E3C; color: white; font-weight: 700; }
+      .grand td { color: white; padding: 10px 12px; }
+    </style></head><body>
+    <h1>Carpenter Attendance Report</h1>
+    <div class="sub">Home Interior Project &nbsp;|&nbsp; Generated: `+generatedOn+`</div>
+    <div class="section-title">Attendance Record (Marked Days Only)</div>
+    <table>
+      <thead><tr><th class="left" style="padding:8px 10px;">Day</th><th class="left" style="padding:8px 10px;">Date</th><th>🪚 Head</th><th>🔨 Junior</th><th>🧰 Helper</th></tr></thead>
+      <tbody>`+rows+`</tbody>
+    </table>
+    <div class="section-title">Wage Summary</div>
+    <table>
+      <thead><tr><th class="left" style="padding:8px 12px;">Worker</th><th style="padding:8px 12px;">Days Present</th><th style="padding:8px 12px;">Daily Rate</th><th style="padding:8px 12px;">Amount Due</th></tr></thead>
+      <tbody>`+summaryRows+`
+      <tr class="grand"><td>Grand Total</td><td></td><td></td><td style="text-align:right;">₹`+grandTotal.toLocaleString('en-IN')+`</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:#aaa;margin-top:16px;">P = Present &nbsp; A = Absent &nbsp; — = Not marked</div>
+    `+(payments.length > 0 ? `
+    <div class="section-title" style="margin-top:24px;">Payments Made</div>
+    <table>
+      <thead><tr><th class="left" style="padding:8px 10px;">Date</th><th class="left" style="padding:8px 10px;">Note</th><th style="padding:8px 12px;text-align:right;">Amount Paid</th></tr></thead>
+      <tbody>`+payments.map(p => {
+        const [py,pm,pd] = p.date.split('-').map(Number);
+        return '<tr><td style="padding:7px 10px;">'+pd+' '+MONTHS[pm-1]+' '+py+'</td><td style="padding:7px 10px;">'+(p.note||'—')+'</td><td style="text-align:right;padding:7px 12px;color:#2563EB;font-weight:600;">₹'+p.amount.toLocaleString('en-IN')+'</td></tr>';
+      }).join('')+`
+      <tr style="background:#EAF3FF;"><td style="padding:8px 10px;font-weight:700;">Total Paid</td><td></td><td style="text-align:right;padding:8px 12px;font-weight:700;color:#2563EB;">₹`+payments.reduce((s,p)=>s+p.amount,0).toLocaleString('en-IN')+`</td></tr>
+      </tbody>
+    </table>
+    <table style="margin-top:8px;">
+      <tbody>
+        <tr style="background:#FFF3CD;"><td style="padding:10px 12px;font-weight:700;">Total Wage Due</td><td style="text-align:right;padding:10px 12px;font-weight:700;">₹`+grandTotal.toLocaleString('en-IN')+`</td></tr>
+        <tr style="background:#FFF3CD;"><td style="padding:10px 12px;font-weight:700;">Total Paid</td><td style="text-align:right;padding:10px 12px;font-weight:700;color:#2563EB;">₹`+payments.reduce((s,p)=>s+p.amount,0).toLocaleString('en-IN')+`</td></tr>
+        <tr style="background:`+(grandTotal - payments.reduce((s,p)=>s+p.amount,0) <= 0 ? '#E8F7EF' : '#FDECEA')+`;"><td style="padding:10px 12px;font-weight:700;">Net Balance Remaining</td><td style="text-align:right;padding:10px 12px;font-weight:700;color:`+(grandTotal - payments.reduce((s,p)=>s+p.amount,0) <= 0 ? '#2D9E5F' : '#D94F3D')+`;">₹`+Math.abs(grandTotal - payments.reduce((s,p)=>s+p.amount,0)).toLocaleString('en-IN')+(grandTotal - payments.reduce((s,p)=>s+p.amount,0) < 0 ? ' (Overpaid)' : grandTotal - payments.reduce((s,p)=>s+p.amount,0) === 0 ? ' ✓ Settled' : ' Due')+`</td></tr>
+      </tbody>
+    </table>` : '')+`
+    </body></html>`;
+
+    const win = window.open('', '_blank');
+    win.document.write(html);
+    win.document.close();
+    win.focus();
+    setTimeout(() => { win.print(); }, 600);
+  }
+  // ────────────────────────────────────────────────────────────────────────────
+
+  // ── Payment Tracker ─────────────────────────────────────────────────────────
+  let payments = [];
+  function getPaymentsKey() { return 'carpenter_payments_v1'; }
+  function loadPayments() {
+    try { const r = localStorage.getItem(getPaymentsKey()); if (r) payments = JSON.parse(r); } catch(e) { payments = []; }
+  }
+  function savePayments() {
+    try { localStorage.setItem(getPaymentsKey(), JSON.stringify(payments)); } catch(e) {}
+  }
+  function addPayment() {
+    const dateVal = document.getElementById('p-date').value;
+    const amountVal = parseFloat(document.getElementById('p-amount').value);
+    const noteVal = document.getElementById('p-note').value.trim();
+    if (!dateVal) { alert('Please select a date.'); return; }
+    if (!amountVal || amountVal <= 0) { alert('Please enter a valid amount.'); return; }
+    payments.push({ id: Date.now(), date: dateVal, amount: amountVal, note: noteVal });
+    payments.sort((a, b) => a.date.localeCompare(b.date));
+    savePayments();
+    document.getElementById('p-amount').value = '';
+    document.getElementById('p-note').value = '';
+    renderPayments();
+    updateBalance();
+  }
+  function deletePayment(id) {
+    payments = payments.filter(p => p.id !== id);
+    savePayments();
+    renderPayments();
+    updateBalance();
+  }
+  function formatPaymentDate(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    return d + ' ' + MONTHS[m-1] + ' ' + y;
+  }
+  function renderPayments() {
+    const list = document.getElementById('payment-list');
+    if (payments.length === 0) { list.innerHTML = ''; return; }
+    list.innerHTML = payments.map(p =>
+      '<div class="payment-item">' +
+      '<span class="p-date-badge">' + formatPaymentDate(p.date) + '</span>' +
+      '<span class="p-note-text">' + (p.note || '—') + '</span>' +
+      '<span class="p-amount-text">₹' + p.amount.toLocaleString('en-IN') + '</span>' +
+      '<button class="p-del-btn" onclick="deletePayment(' + p.id + ')" title="Delete">✕</button>' +
+      '</div>'
+    ).join('');
+  }
+  function getTotalDue() {
+    const counts = { head:0, junior:0, helper:0 };
+    Object.values(attendance).forEach(day => { WORKERS.forEach(w => { if (day[w] === true) counts[w]++; }); });
+    return WORKERS.reduce((s, w) => s + counts[w] * (parseFloat(document.getElementById('rate-'+w).value) || 0), 0);
+  }
+  function updateBalance() {
+    const due = getTotalDue();
+    const paid = payments.reduce((s, p) => s + p.amount, 0);
+    const net = due - paid;
+    document.getElementById('bal-due').textContent  = '₹' + due.toLocaleString('en-IN');
+    document.getElementById('bal-paid').textContent = '₹' + paid.toLocaleString('en-IN');
+    const netEl = document.getElementById('bal-net');
+    netEl.textContent = '₹' + Math.abs(net).toLocaleString('en-IN') + (net < 0 ? ' (Over)' : net === 0 ? ' ✓' : '');
+    netEl.className = 'bal-value ' + (net <= 0 ? 'bal-net-zero' : 'bal-net-positive');
+  }
+  // ── End Payment Tracker ─────────────────────────────────────────────────────
+
+  WORKERS.forEach(w => {
+    document.getElementById('rate-'+w).addEventListener('input', () => { saveRates(); updateSummary(); updateBalance(); });
+  });
+
+  const today = getToday();
+  document.getElementById('today-label').textContent = 'Today: '+DAYS[today.getDay()]+', '+today.getDate()+' '+MONTHS[today.getMonth()]+' '+today.getFullYear();
+
+  // Set today's date as default in payment date input
+  document.getElementById('p-date').value = formatKey(getToday());
+
+  loadData();
+  loadRates();
+  loadPayments();
+  buildRows();
+  updateSummary();
+  renderPayments();
+  updateBalance();
+</script>
+</body>
+</html>
